@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Bản Thân - Anime Style</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#intro">Giới Thiệu</a></li>
+                <li><a href="#hobbies" class="btn-hobbies">Sở Thích</a></li>
+                <li><a href="#skills">Kỹ Năng</a></li>
+                <li><a href="#projects">Dự Án</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>                
+            </ul>
+        </nav>
+    </header>
+
+
+<!-- Banner -->
+<section id="intro" class="banner fadeInUp">
+    <div class="intro-content">
+        <img src="https://i.pinimg.com/736x/cc/e5/2f/cce52f1335056ce638e833b4c3fa61f1.jpg" alt="Ảnh đại diện" class="profile-img">
+        <h1>Chào Mừng Bạn Đến Với Trang Web Của Tớ!</h1>
+        <p>Đây là một trang web giới thiệu một cách đơn giản về bản thân tớ.</p>
+        <p>Chào bạn mình là Neyu! Hiện tại đang là sinh viên tại trường đại học Đà Lạt khoa Công Nghệ Thông Tin</p>
+        <button class="anime-button" onclick="window.location.href='#skills'">Khám Phá Kỹ Năng</button>
+    </div>
+</section>
+
+
+<!-- Section Sở Thích -->
+<section id="hobbies" class="hobbies-section">
+    <h2 data-aos="fade-up">Sở Thích Của Tôi</h2>
+    <div class="hobbies-container">
+        <div class="hobby-card" data-aos="zoom-in-up" data-aos-delay="100">
+            <img src="https://i.pinimg.com/736x/85/e6/47/85e64767b129d2cae2d1c47b1ed0aece.jpg" alt="Chơi Game" class="hobby-img">
+            <h3>Chơi Game</h3>
+            <p>Tôi yêu thích các trò chơi hành động và phiêu lưu, đặc biệt là Genshin Impact!</p>
+        </div>
+        <div class="hobby-card" data-aos="zoom-in-up" data-aos-delay="200">
+            <img src="https://i.pinimg.com/736x/44/e6/26/44e6263dc93dd244f943bd656759b4da.jpg" alt="Vẽ Anime" class="hobby-img">
+            <h3>Vẽ Anime</h3>
+            <p>Vẽ các nhân vật anime và manga là một trong những sở thích tôi yêu thích nhất.</p>
+        </div>
+    <div class="hobby-card" data-aos="fade-up" data-aos-delay="400">
+        <img src="https://i.pinimg.com/736x/84/ae/a8/84aea8fdc3a37c1ca15a417ad2af2084.jpg" alt="Chơi Đàn" class="hobby-img">
+        <h3>Chơi đàn</h3>
+        <p>Sở thích chơi đàn của tôi mang lại cảm giác thư giãn và sáng tạo, giúp tôi kết nối với âm nhạc và thể hiện cảm xúc cá nhân.</p>
+    </div>
+</div>
+</section> 
+
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-title">
+            <h2>Kỹ Năng Của Tôi</h2>
+            <p>Biểu đồ dưới đây mô tả các kỹ năng của tôi và mức độ thành thạo từng kỹ năng.</p>
+        </div>
+    
+        <!-- Biểu đồ kỹ năng -->
+        <div class="chart-container">
+            <canvas id="skillsChart"></canvas>
+        </div>
+    </section>
+    
+
+    <!-- Phần Dự Án -->
+<section id="projects">
+    <h2>Dự Án Của Tôi</h2>
+    <div class="projects-container">
+        <!-- Dự Án 1 -->
+        <div class="project-card">
+            <h3>Dự Án 1</h3>
+            <p>Mô tả ngắn về dự án 1.</p>
+            <a href="#project1">Xem Chi Tiết</a>
+        </div>
+
+        <!-- Dự Án 2 -->
+        <div class="project-card">
+            <h3>Dự Án 2</h3>
+            <p>Mô tả ngắn về dự án 2.</p>
+            <a href="#project2">Xem Chi Tiết</a>
+        </div>
+
+        <!-- Dự Án 3 -->
+        <div class="project-card">
+            <h3>Dự Án 3</h3>
+            <p>Mô tả ngắn về dự án 3.</p>
+            <a href="#project3">Xem Chi Tiết</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="fadeInUp">
+        <h2>Liên Hệ</h2>
+        <form action="#">
+            <input type="text" placeholder="Tên của bạn" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Tin nhắn của bạn"></textarea>
+            <button type="submit" class="anime-button">Gửi</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Biểu đồ kỹ năng
+        const skillsCtx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(skillsCtx, {
+            type: 'radar',
+            data: {
+                labels: ['HTML', 'CSS', 'JavaScript', 'Python', 'React', 'Node.js'],
+                datasets: [{
+                    label: 'Kỹ Năng',
+                    data: [90, 85, 75, 70, 65, 60], // Tỷ lệ kỹ năng của bạn (tùy chỉnh)
+                    fill: true,
+                    backgroundColor: 'rgba(255, 87, 34, 0.2)',
+                    borderColor: 'rgba(255, 87, 34, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,          // Đảm bảo biểu đồ có thể thay đổi kích thước
+                maintainAspectRatio: false, // Cho phép thay đổi tỷ lệ khung hình
+                scale: {
+                    ticks: {
+                        beginAtZero: true,
+                        max: 100
+                    },
+                    pointLabels: {
+                        fontSize: 14,       // Cỡ chữ của nhãn các điểm
+                        fontColor: '#333'   // Màu chữ của nhãn
+                    },
+                },
+                elements: {
+                    line: {
+                        tension: 0.3  // Mức độ uốn cong của đường biểu đồ
+                    }
+                },
+            }
+        });
+        </script>
+
+        <!-- Section Liên hệ với biểu tượng mạng xã hội -->
+        <section id="contact">
+            <h2>Liên Hệ Với Tôi</h2>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/lxmtuu" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://x.com/neyu_2004" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/lx_mtuu/" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <!-- Thêm biểu tượng GitHub -->
+                <a href="https://github.com/lxmtuu" target="_blank" class="social-icon">
+                    <i class="fab fa-github"></i> <!-- Biểu tượng GitHub -->
+                </a>
+            </div>
+        </section>
+        
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Bản quyền thuộc về Neyu.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+    AOS.init();
+</script>
+
+</body>
+</html>

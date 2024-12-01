@@ -1,0 +1,778 @@
+/* Cơ bản */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a2c2e3, #ffb3c6);
+    color: #e8d8d8;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #b03d23;
+}
+
+/* Ảnh đại diện trong phần banner */
+.profile-img {
+    width: 200px; /* Kích thước ảnh */
+    height: 200px; /* Chiều cao bằng với chiều rộng để ảnh là hình tròn */
+    border-radius: 50%; /* Bo tròn ảnh */
+    object-fit: cover; /* Đảm bảo ảnh được cắt đẹp */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ cho ảnh */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển động mượt mà */
+    margin-bottom: 30px; /* Khoảng cách giữa ảnh và các phần tử bên dưới */
+}
+
+/* Hiệu ứng khi hover ảnh */
+.profile-img:hover {
+    transform: scale(1.1); /* Phóng to ảnh khi hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Tăng bóng khi hover */
+}
+
+/* Phần Sở Thích */
+.hobbies-section {
+    padding: 50px;
+    text-align: center;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4); /* Màu sắc tươi sáng, dễ thương */
+    border-radius: 15px;
+    margin-top: 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hobbies-section h2 {
+    font-size: 36px;
+    color: #fbffff; /* Màu sắc anime */
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Hiệu ứng đổ bóng cho tiêu đề */
+}
+
+/* Container của các sở thích */
+.hobbies-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Thẻ sở thích */
+.hobby-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: url('https://example.com/anime-background.jpg') no-repeat center center; /* Thêm nền anime cho mỗi thẻ */
+    background-size: cover;
+}
+
+/* Khi hover lên các thẻ */
+.hobby-card:hover {
+    transform: translateY(-10px); /* Đẩy thẻ lên khi hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Làm đậm bóng đổ khi hover */
+}
+
+/* Phần ảnh sở thích */
+.hobby-img {
+    width: 100%; /* Đảm bảo ảnh chiếm đầy chiều rộng của thẻ chứa */
+    max-width: 300px; /* Chiều rộng tối đa của ảnh */
+    height: auto; /* Tự động tính toán chiều cao phù hợp với chiều rộng */
+    border-radius: 10px; /* Bo góc cho ảnh */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng nhẹ cho ảnh */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động và bóng */
+    filter: brightness(90%); /* Tối màu ảnh để tạo sự tương phản */
+}
+
+/* Thêm hiệu ứng khi di chuột vào ảnh */
+.hobby-img:hover {
+    transform: scale(1.1); /* Phóng to ảnh một chút khi di chuột */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Làm bóng mạnh hơn */
+    filter: brightness(100%); /* Làm ảnh sáng hơn khi hover */
+}
+
+/* Điều chỉnh khi màn hình nhỏ hơn */
+@media (max-width: 768px) {
+    .hobby-img {
+        max-width: 200px; /* Giảm kích thước ảnh trên các màn hình nhỏ */
+    }
+}
+
+/* Thêm hiệu ứng động cho các thẻ sở thích */
+.hobby-card {
+    transition: transform 0.5s ease, box-shadow 0.3s ease; /* Hiệu ứng di chuyển cho thẻ khi hover */
+}
+
+/* Hiệu ứng khi di chuột vào thẻ sở thích */
+.hobby-card:hover {
+    transform: translateY(-10px); /* Nâng thẻ lên khi hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Tăng bóng khi hover */
+}
+
+/* Thêm màu nền nhẹ cho các thẻ sở thích */
+.hobby-card {
+    background-color: #f9f9f9; /* Nền sáng */
+    padding: 15px;
+    border-radius: 10px; /* Bo góc cho thẻ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bóng nhẹ cho thẻ */
+    overflow: hidden; /* Đảm bảo ảnh không bị tràn ra ngoài */
+}
+
+/* Thêm hiệu ứng vào tiêu đề và mô tả của sở thích */
+.hobby-card h3 {
+    color: #f5ebea; /* Màu sắc của tiêu đề */
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+}
+
+/* Đổi màu tiêu đề khi hover */
+.hobby-card:hover h3 {
+    color: #1e1e1d; /* Màu sắc khi hover */
+}
+
+/* Mô tả sở thích */
+.hobby-card p {
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.5;
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu cho mô tả */
+}
+
+/* Đổi màu mô tả khi hover */
+.hobby-card:hover p {
+    color: #333; /* Màu mô tả khi hover */
+}
+
+/* Hình ảnh sở thích */
+.hobby-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ff6f61; /* Viền màu anime */
+}
+
+/* Tiêu đề sở thích */
+.hobby-card h3 {
+    font-size: 24px;
+    color: #fff; /* Màu chữ trắng */
+    margin-bottom: 15px;
+    font-family: 'Comic Sans MS', sans-serif; /* Phông chữ dễ thương kiểu manga */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* Đổ bóng cho tên sở thích */
+}
+
+/* Mô tả sở thích */
+/* Phần Sở Thích */
+.hobbies-section {
+    padding: 50px;
+    text-align: center;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4); /* Màu sắc tươi sáng, dễ thương */
+    border-radius: 15px;
+    margin-top: 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.hobbies-section h2 {
+    font-size: 36px;
+    color: #f4feff; /* Màu sắc anime */
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Hiệu ứng đổ bóng cho tiêu đề */
+    animation: slideInFromTop 1s ease-out;
+}
+
+/* Hiệu ứng cho tiêu đề */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Container của các sở thích */
+.hobbies-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* Thẻ sở thích */
+.hobby-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: url('https://example.com/anime-background.jpg') no-repeat center center; /* Thêm nền anime cho mỗi thẻ */
+    background-size: cover;
+    position: relative;
+}
+
+/* Zoom-in và hiệu ứng khi hover */
+.hobby-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Làm đậm bóng đổ khi hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hình ảnh sở thích */
+.hobby-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ff6f61; /* Viền màu anime */
+    transition: transform 0.3s ease; /* Thêm hiệu ứng khi hover hình ảnh */
+}
+
+
+/* Tiêu đề sở thích */
+.hobby-card h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 15px;
+    font-family: 'Comic Sans MS', sans-serif; /* Phông chữ dễ thương kiểu manga */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* Đổ bóng cho tên sở thích */
+    transition: color 0.3s ease;
+}
+
+/* Mô tả sở thích */
+.hobby-card p {
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s ease;
+}
+
+/* Hiệu ứng cuộn trang cho phần sở thích */
+[data-aos="zoom-in-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease-in-out;
+}
+
+[data-aos="zoom-in-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hiệu ứng phóng to ảnh khi hover */
+.hobby-img:hover {
+    transform: scale(1.1);
+}
+
+/* Các phần tử khác */
+/* Banner - Cập nhật thiết kế theo phong cách anime */
+.banner {
+    background: url('https://c4.wallpaperflare.com/wallpaper/695/331/660/digital-art-artwork-women-cityscape-wallpaper-preview.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Hiệu ứng chữ động */
+.intro-content h1 {
+    font-size: 4rem;
+    font-family: 'Comic Sans MS', sans-serif;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+    color: #464747;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+/* Hiệu ứng chữ mô phỏng khi cuộn vào */
+.intro-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.5s ease-out;
+    font-style: italic;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Hình ảnh */
+.banner-img {
+    width: 300px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.banner-img:hover {
+    transform: scale(1.1);
+}
+
+/* Hiệu ứng nút */
+.intro-content .anime-button {
+    background: linear-gradient(45deg, #ff5733, #ffcccb);
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px 40px;
+    border: 2px solid #ff5733;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.intro-content .anime-button:hover {
+    background-color: #e56969;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Nền động cho banner */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Nút Anime */
+.anime-button {
+    background: linear-gradient(45deg, #ff5733, #ffcccb);
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border: 2px solid #ff5733;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anime-button:hover {
+    background-color: #ff6262;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Skills, Projects, Contact sections */
+
+/* Kỹ năng */
+/* Phần kỹ năng */
+#skills {
+    padding: 50px;
+    text-align: center;
+}
+
+.chart-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Điều chỉnh kích thước canvas */
+canvas {
+    width: 100% !important;
+    height: 400px !important;  /* Điều chỉnh chiều cao cho phù hợp */
+    max-width: 600px;          /* Giới hạn chiều rộng */
+    max-height: 400px;         /* Giới hạn chiều cao */
+    margin: 20px auto;
+    border: 2px solid #e84747;
+    border-radius: 15px;
+}
+
+
+#skills, #projects, #contact {
+    padding: 50px;
+    text-align: center;
+    margin-bottom: 80px; /* Thêm margin-bottom để không bị che khuất */
+}
+
+#skills {
+    background-color: #f5b1a6;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.skill {
+    width: 45%;
+    background-color: #f54b4b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-10px);
+}
+
+.skill h3 {
+    font-size: 1.8rem;
+    color: #f64848;
+}
+
+/* Tiêu đề "Kỹ Năng Của Tôi" */
+#skills h2 {
+    color: #d673ab; /* Màu chữ của tiêu đề */
+    font-size: 2.5em; /* Kích thước chữ lớn hơn */
+    font-family: 'Arial', sans-serif; /* Chọn font chữ dễ đọc */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Thêm bóng cho chữ */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+
+/* Mô tả phần "Biểu đồ dưới đây mô tả các kỹ năng của tôi" */
+#skills p {
+    color: #403d3d; /* Màu chữ cho đoạn mô tả */
+    font-size: 1.2em; /* Kích thước chữ vừa phải */
+    font-family: 'Arial', sans-serif; /* Chọn font chữ dễ đọc */
+    line-height: 1.6; /* Khoảng cách giữa các dòng */
+    text-align: center; /* Canh giữa đoạn văn */
+    margin-bottom: 30px; /* Khoảng cách dưới mô tả */
+}
+
+
+/* Phần dự án */
+#projects {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #ff9a8b, #ff6a00); /* Gradient màu đẹp cho nền */
+    color: white;
+    text-align: center;
+}
+
+/* Tiêu đề phần dự án */
+#projects h2 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Thêm bóng cho tiêu đề */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container chứa các thẻ dự án */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Các thẻ dự án */
+.project-card {
+    background: #ffffff; /* Màu nền sáng cho thẻ dự án */
+    border-radius: 15px; /* Bo góc cho thẻ */
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Bóng đổ cho thẻ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng hover khi di chuột qua thẻ dự án */
+.project-card:hover {
+    transform: translateY(-10px); /* Di chuyển lên trên khi hover */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* Tăng độ bóng khi hover */
+}
+
+/* Tiêu đề của từng dự án */
+.project-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Mô tả ngắn về dự án */
+.project-card p {
+    color: #666;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Hiệu ứng gradient cho nút hoặc liên kết trong phần dự án */
+.project-card a {
+    display: inline-block;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #e99960, #ff9a8b);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover khi di chuột qua nút */
+.project-card a:hover {
+    background: linear-gradient(135deg, #ff9a8b, #9fbae5); /* Đổi màu gradient khi hover */
+    transform: translateY(-5px); /* Di chuyển nút lên khi hover */
+}
+
+
+/* Liên Hệ Section */
+#contact {
+    background-color: #ffffe0;
+    padding: 50px;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact input, #contact textarea {
+    width: 80%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#contact input:focus, #contact textarea:focus {
+    border-color: #e0d0cd;
+}
+
+button {
+    background-color: #fdb5a5;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffeea9f0;
+}
+/* Phần Liên hệ và các biểu tượng mạng xã hội */
+#contact {
+    padding: 50px;
+    text-align: center;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    margin-top: 50px;
+}
+
+#contact h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Bố cục của các biểu tượng */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Khoảng cách giữa các biểu tượng */
+}
+
+/* Các biểu tượng mạng xã hội */
+.social-icon {
+    font-size: 36px;
+    color: #333;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+/* Hiệu ứng hover */
+.social-icon:hover {
+    background-color: hwb(177 64% 10% / 0.959); /* Màu nền khi hover */
+    color: white; /* Màu chữ khi hover */
+    transform: translateY(-5px); /* Đẩy lên một chút khi hover */
+    border-color: #FF6F61; /* Màu viền khi hover */
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Hiệu ứng cuộn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Tiêu đề trong phần banner */
+#intro h1 {
+    color: #facead; /* Màu sắc của tiêu đề "Chào Mừng Bạn Đến Với Trang Web Của Tớ!" */
+    font-size: 3em; /* Kích thước chữ */
+    font-family: 'Arial', sans-serif; /* Font chữ dễ đọc */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Thêm bóng cho chữ để tạo hiệu ứng nổi bật */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+
+/* Phần Dự Án */
+#projects {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #ff6a00, #ff9a8b); /* Nền gradient đẹp cho phần Dự Án */
+    color: white; /* Màu chữ trắng để tương phản với nền */
+    text-align: center;
+    border-radius: 10px; /* Bo góc cho toàn bộ phần */
+}
+
+/* Tiêu đề phần Dự Án */
+#projects h2 {
+    font-size: 2.5em;
+    color: #ffffff; /* Màu chữ cho tiêu đề */
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Bóng cho tiêu đề */
+}
+
+/* Container chứa các thẻ dự án */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Các thẻ dự án */
+.project-card {
+    background: #ffffff; /* Nền sáng cho các thẻ dự án */
+    border-radius: 15px; /* Bo góc cho thẻ dự án */
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng cho thẻ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng hover khi di chuột qua thẻ dự án */
+.project-card:hover {
+    transform: translateY(-10px); /* Di chuyển lên khi hover */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* Tăng độ bóng khi hover */
+}
+
+/* Nút trong thẻ dự án */
+.project-card a {
+    display: inline-block;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #4cd6e0, #ff9a8b); /* Gradient cho nút */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho nút */
+.project-card a:hover {
+    background: linear-gradient(135deg, #f7d8d4, #f9b381); /* Đổi màu khi hover */
+    transform: translateY(-5px); /* Di chuyển lên khi hover */
+}
